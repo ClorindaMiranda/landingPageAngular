@@ -1,0 +1,27 @@
+<div class="container">
+    <form [formGroup]="formularioContacto" (ngSubmit)="enviar()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre</label>
+          <input [ngClass]="{'is-invalid':hasError('name','required')}" type="text" class="form-control" id="name" formControlName="name">
+          <div class="text-danger" *ngIf="hasError('name','required')">Nombre Requerido.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input [ngClass]="{'is-invalid':hasError('name','required')}" type="password" class="form-control" id="Password" formControlName="password">
+          <div class="text-danger" *ngIf="hasError('password','required')">Contraseña Requerida.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Tipo de Usuario</label>
+          <select class="form-select" formControlName="typeUser">
+            <option value="Administrador">Administrador</option>
+            <option value="Vendedor">Vendedor</option>
+            <option value="Supervisor">Supervisor</option>
+         </select>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+</div>
