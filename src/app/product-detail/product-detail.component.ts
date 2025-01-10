@@ -26,7 +26,7 @@ export class ProductDetailComponent implements OnInit{
         next :(params: Params ) => {
       this._apiService.getProduct(Number(params ['productId'])).subscribe({
         next: (data: IProduct) => {
-          this.color= this.product?.Price as number > 200 ? 'red'  : ''
+        //  this.color= this.product?.Price as number > 200 ? 'red'  : ''
           this.product = data
           this.loading=false 
         },
@@ -34,7 +34,6 @@ export class ProductDetailComponent implements OnInit{
           console.log(error);
           this.loading=false;
         }
-     
       })
     }
   });
