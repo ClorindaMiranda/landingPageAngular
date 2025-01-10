@@ -1,12 +1,13 @@
 export interface IProduct{
     productId: number;
-   productName: string;
+    productName: string;
     productDescription: string;
-    //ManufactureCode: number;
-    //SubCategoryId: number;
-    //CodStatus: number;
-    //Price: number;
-    //Image: string;
+    manufacturerCode: number;
+    subCategoryId: number;
+    codStatus: number;
+    price: number;
+    image: string;
+    inventory :number;
 }
 export enum Category{
     General= "general",

@@ -5,6 +5,7 @@
       <tr class="table-primary">
         <th scope="col">#</th>
         <th scope="col">Product</th>
+        <th scope="col">ProductName</th>
         <th scope="col">Price</th>
         <th scope="col">Details</th>
       </tr>
@@ -13,7 +14,9 @@
       <tr *ngFor="let product of productList">
         <th scope="row">{{product.productId}}</th>
         <td>{{product.productName}}</td>
-       <!-- <td [ngClass]="{'red-color':product.price > 200 }">{{product.price | currency : 'C$'}}</td>-->
+        <td>{{product.productDescription}}</td>
+        <td>{{product.inventory}}</td>
+        <td [ngClass]="{'red-color':product.price > 200 }">{{product.price | currency : 'C$'}}</td>
         <button type="button" class="btn btn-outline-primary" [routerLink]="['/product',product.productId]">Detalle</button>
       </tr>
     </tbody>
